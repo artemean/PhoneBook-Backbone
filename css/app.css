@@ -1,0 +1,31 @@
+/*
+
+app-template.css overrides
+
+remove this comment if used
+remove this file if not
+
+*/
+body {
+	background: #c2efb2;
+	color: #000;
+	font-family: sans-serif;
+}
+
+.wrap {
+	background: #edffe7;
+	padding: 20px;
+	margin: 0 auto;
+	width: 940px;
+	border: 1px solid #697f61;
+	border-radius: 5px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td {
+	border: 1px solid #7b9571;
+	padding: 5px 10px;
+}

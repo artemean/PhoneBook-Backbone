@@ -1,0 +1,1 @@
+A simple PhoneBook app made with Backbone.js

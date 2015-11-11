@@ -1,0 +1,12 @@
+{
+	"id": 1,
+	"name": "Oleg",
+	"phone": "0501234567",
+	"address": {
+		"city": "Kiev",
+		"street": "Pobedy",
+		"building": 12
+	},
+	"job": "carpenter",
+	"organisation": "Oleg and sons"
+}

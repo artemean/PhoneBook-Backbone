@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "dependencies": {},
+  "name": "PhoneBook-Backbone",
+  "description": "Simple Phonebook made with Backbone.js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "browser-sync": "^2.9.10",
+    "gulp": "^3.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andriy A",
+  "license": "ISC"
+}
