@@ -29,3 +29,7 @@ td {
 	border: 1px solid #7b9571;
 	padding: 5px 10px;
 }
+
+.phonebook table {
+	width: 100%;
+}

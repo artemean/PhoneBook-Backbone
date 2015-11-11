@@ -15,14 +15,15 @@ bookItem1.fetch({
     }
 });
 
+
           
 var ItemView = Backbone.View.extend({
 	tagName: 'tr',
-	template: _.template('<td><%= name %></td>'),
+	template: _.template('<td><%= id %></td><td><%= name %></td><td><%= phone %></td>'),
+	model: bookItem1,
 
 	render: function(){
-		console.log(bookItem1.toJSON());
-		this.$el.html(this.template());
+		this.$el.html(this.template(this.model.attributes));
 		return this.$el;
 	}
 });
@@ -33,25 +34,21 @@ var MainView = Backbone.View.extend({
 	template: _.template('<table></table>'),
 
 	initialize: function () {
-		this.itemView = new ItemView({model: bookItem1});
+		this.itemView = new ItemView();
 	},
 
 	render: function () {
 		var self = this;
-		this.$el.html(this.template());
-		// this.$('table').append(this.itemView.render());
-		$.when(bookItem1.fetch()).then(function() {
-		   self.$('table').append(self.itemView.render());
+		self.$el.html(this.template());
+		bookItem1.on('change', function(){
+			self.$('table').append(self.itemView.render());
 		});
-		// console.log(this.$el);
+		
 		return this.$el;
-	},
+	}
 });
 
 
-
 var main = new MainView();
-// var item = new ItemView();
-
 
 $('.wrap').append(main.render());
