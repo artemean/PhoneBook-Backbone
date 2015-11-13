@@ -7,23 +7,38 @@ var PhoneBookApp = (function (app) {
 	app.views.MainView = Backbone.View.extend({
 		tagName: 'section',
 		className: 'phonebook',
-		template: _.template('<table></table>'),
+		template: _.template('<table></table><button class="update">Update</button>'),
+
+		events: {
+			'click .update': 'updateAll'
+		},
 
 		initialize: function () {
-			this.itemView = new app.views.ItemView();
+			var model = new app.models.BookItem();
+
+			this.itemView = new app.views.ItemView({model: model});
 		},
 
 		render: function () {
-			var self = this;
+
+			this.$el.html(this.template());
+			this.$('table').append(this.itemView.render());
+			// app.models.bookItem1.on('change', function(){
+			// 	self.$('table').append(self.itemView.render());
+			// 	console.log(self);
+			// });
 			
-			self.$el.html(self.template());
-			app.models.bookItem1.on('change', function(){
-				self.$('table').append(self.itemView.render());
-			});
-			
-			return self.$el;
+			return this.$el;
+		},
+
+		updateAll: function () {
+			console.log('clicked');
+			this.model.fetch();
+			this.render();
 		}
 	});
+
+	console.log(app.views.MainView);
 
 	return app;
 })(PhoneBookApp);
